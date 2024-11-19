@@ -23,9 +23,9 @@ FAQ faq_list[max_res] = {
     {{"hello", "hi","hey"},"Hi! Hope you're having a nice day.How may I help you today? \n "},
     {{"bye"}, "goodbye!"},
     {{"thanks", "thank you"},"Glad I could be of help! Is there anything else I can assist you with?"}
-};
+};//struct which stores keywords from FAQs and responses to them
 
-void to_lowercase(char *str) 
+void to_lowercase(char *str) //converts user input to lowercase
 {
     for (int i = 0; str[i]; i++) 
     {
@@ -54,7 +54,7 @@ void chatbot(char *input)
 
     if (!match_found) {
     printf("Libby: I'm sorry, I couldn't find any relevant information. Here are some common topics you can ask about:\n");
-    for (int i = 0; i < max_res-10; i++) {
+    for (int i = 0; i < max_res-11; i++) {
         if (faq_list[i].keywords[0][0] != '\0') {
             printf("- %s\n", faq_list[i].keywords[0]);
         }
